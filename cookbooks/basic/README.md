@@ -1,6 +1,6 @@
 basic Cookbook
 ==============
-TODO: Enter the cookbook description here.
+This package installs basic packages to get access to the box.
 
 e.g.
 This cookbook makes your favorite breakfast sandwich.
