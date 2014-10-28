@@ -1,0 +1,10 @@
+{
+"name": "webserver",
+"description": "Role to manage webservers",
+"default_attributes": {
+ "apache":  { 
+  "greetings" : "Webinar from LHM"
+  }
+},
+"run_list" : [ "recipe[apache]" ]
+}

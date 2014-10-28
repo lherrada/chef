@@ -1,0 +1,14 @@
+{
+"name": "basicweb",
+"description": "Role to do basic setup and configure webservers",
+"default_attributes": {
+ "apache":  { 
+  "greetings" : "This is basic2 role meant for basic configuration and web setup"
+  }
+},
+"run_list" : [
+               "recipe[basic]",
+               "recipe[apache]",
+               "recipe[apache::vhosts]"
+ ]
+}
