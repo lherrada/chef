@@ -7,6 +7,12 @@
 # All rights reserved - Do Not Redistribute
 #
 
+execute "apt-get-update" do
+  command "sudo apt-get update"
+  ignore_failure false 
+  action :run
+end
+
 #Adding user
 user node[:basic][:username1]  do
  supports :manage_home => true
@@ -38,22 +44,6 @@ file "#{node[:basic][:home1]}/.ssh/authorized_keys" do
  action :create
 end
 
-#Adding vim package
-
-package "vim" do
- action :install
-end
-
-node.default["source"]='bash_profile.erb'
-
-template "#{node[:basic][:home1]}/.bash_profile" do
- owner node[:basic][:username1]
- group node[:basic][:username1]
- mode '644'
- #source "#{node[:source]}" 
- source node[:source] 
-end 
-
 template "/etc/sudoers" do
  source "sudoers.erb"
  mode '0440'
@@ -64,9 +54,30 @@ template "/etc/sudoers" do
  })
 end
 
+#ifconfig "name" do
+#  device "eth0"
+#  action :disable
+#  target "10.0.2.15"
+#end
+
+node.default["source"]='bash_profile.erb'
+template "#{node[:basic][:home1]}/.bash_profile" do
+ owner node[:basic][:username1]
+ group node[:basic][:username1]
+ mode '644'
+ #source "#{node[:source]}" 
+ source node[:source] 
+end 
+
+
 #Disabling iptables
 service 'iptables' do
  action :stop
+end
+
+#Adding vim package
+package "vim" do
+ action :install
 end
 
 package "git" do

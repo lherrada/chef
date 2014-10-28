@@ -52,6 +52,15 @@ service service_name do
   action [:start, :enable]
 end
 
+package "libapache2-mod-wsgi" do
+  action [:start, :enable]
+end
+ 
+package "python-pip" do
+  action [:start, :enable]
+end
+
+
 #template '/var/www/html/index.html' do
 template "#{document_root}/index.html" do
   source 'index.html.erb'

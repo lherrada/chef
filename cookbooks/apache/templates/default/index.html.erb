@@ -8,6 +8,8 @@
       <%= node['cpu']['total'] %> CPUs
       <%= node['kernel']['machine'] %> Kernel
       <h3> My message  <%= node['apache']['greetings'] %> !!! </h3> 
+      <h1> <blink> We love <%= @site_name %> </blink> </h1>
     </pre>
+<p> Served from <%= node['ipaddress'] %>: <%= @port %> </p>
  </body>
 </html>
