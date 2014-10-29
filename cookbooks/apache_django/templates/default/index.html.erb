@@ -1,0 +1,15 @@
+<html> 
+ <body> <h3>Melissa is my beautiful sister. I want to travel with her to California</h3>
+       <h1> My node's name is <%= node['fqdn'] %></h1>
+	<pre>
+      <%= node['hostname'] %>
+      <%= node['platform'] %> - <%= node['platform_version'] %>
+      <%= node['memory']['total'] %> RAM
+      <%= node['cpu']['total'] %> CPUs
+      <%= node['kernel']['machine'] %> Kernel
+      <h3> My message  <%= node['apache']['greetings'] %> !!! </h3> 
+      <h2> ---> <%= node[:apache][:dir] %> </h2>
+    </pre>
+<p> Served from <%= node['ipaddress'] %> </p>
+ </body>
+</html>

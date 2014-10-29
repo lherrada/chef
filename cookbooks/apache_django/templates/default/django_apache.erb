@@ -1,0 +1,9 @@
+WSGIScriptAlias / /var/www/system/system/wsgi.py
+#WSGIPythonPath /var/www/system
+
+<Directory /var/www/system/system>
+<Files wsgi.py>
+Require all granted
+Satisfy Any
+</Files>
+</Directory>
