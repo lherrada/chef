@@ -1,5 +1,5 @@
 {
 "name": "django",
 "description": "Role to install,configure and start dirusage application",
-"run_list" : [ "recipe[basic]","recipe[redis]" ]
+"run_list" : [ "recipe[basic]","recipe[redis]","recipe[apache_django]" ]
 }

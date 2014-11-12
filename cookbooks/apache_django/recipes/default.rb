@@ -79,6 +79,14 @@ template "#{document_root}/index.html" do
   source 'index.html.erb'
 end
 
+template "/etc/apache2/apache2.conf" do
+ owner 'root'
+ group 'root'
+ mode '0644'
+ source 'apache2.erb'
+end
+
+
 template "/etc/apache2/sites-available/django" do
  owner 'root'
  group 'root'
